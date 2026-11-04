@@ -1,0 +1,8 @@
+Thư viện bên thứ ba, đóng gói sẵn để hệ thống chạy được khi KHÔNG có mạng.
+
+mediapipe/   MediaPipe Tasks Vision 0.10.21 (Google) — giấy phép Apache-2.0
+             vision_bundle.mjs + wasm/vision_wasm_internal.* : tìm khuôn mặt ngay trong trình duyệt
+             blaze_face_short_range.tflite : model BlazeFace (tầm gần) của MediaPipe, Apache-2.0
+fonts/       Phông chữ Inter 5 (Rasmus Andersson) — giấy phép SIL Open Font License 1.1 (xem LICENSE-Inter.txt)
+
+Nếu thiếu file nào ở đây, giao diện tự tải từ mạng (jsDelivr / Google) như trước.

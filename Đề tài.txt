@@ -1,0 +1,64 @@
+Linh: Nhận diện khuôn mặt camera
+      Mà chào hỏi được tên
+
+Cách mình hiểu
+Đề tài: Nhận diện khuôn mặt qua camera và chào theo tên
+Mô tả
+Hệ thống sử dụng camera để ghi hình người đứng trước màn hình, tự động phát hiện khuôn mặt và đối chiếu với danh sách những người đã đăng ký. Khi nhận ra, hệ thống chào đúng tên người đó. Khi không nhận ra, hệ thống báo là người lạ.
+
+Cách hoạt động chung:
+– Camera ghi hình liên tục và hệ thống tìm khuôn mặt trong từng khung hình.
+– Khuôn mặt được so sánh với dữ liệu khuôn mặt của những người đã đăng ký.
+– Nếu đủ giống thì hiển thị lời chào kèm tên, nếu không thì hiển thị "Người lạ".
+– Người mới có thể được đăng ký thêm bằng cách chụp ảnh khuôn mặt qua camera và nhập tên.
+
+Mục tiêu
+– Nhận diện khuôn mặt qua camera theo thời gian thực, đủ nhanh để sử dụng trực tiếp.
+– Chào đúng tên người đã đăng ký và phân biệt được với người lạ.
+– Cho phép đăng ký thêm người mới ngay trên hệ thống, không cần huấn luyện lại từ đầu.
+– Đạt độ chính xác ổn định trong điều kiện ánh sáng và góc mặt thông thường.
+– Xây dựng sản phẩm có thể chạy thử trực tiếp (demo) và đánh giá được kết quả.
+
+
+Cách làm: text to chat
+
+
+
+Đề xuất cải tiến hệ thống chào hỏi bằng nhận diện khuôn mặt
+Oct 31, 2026 · @Nguyễn Đức Minh
+Hệ thống hiện tại đã chạy được: camera nhận diện, chào đúng tên, trang quản lý đăng ký và xóa người. Đề bài của cô là "chào", nên ngoài việc làm giao diện đẹp hơn, có 4 hướng cải tiến dưới đây, xếp theo mức đáng làm. Tất cả đều miễn phí và chạy không cần mạng.
+1. Chào chính xác hơn (ăn điểm kỹ thuật)
+• Chống ảnh giả: giơ ảnh trên điện thoại ra trước camera thì không chào. Thư viện deepface có sẵn chức năng chống giả mạo, chỉ cần bật lên (có thể phải cài thêm một thư viện). Demo rất ấn tượng: giơ ảnh của mình lên, hệ thống báo "Ảnh giả!".
+• Chỉ chào khi chắc chắn: phải nhận ra cùng một người ở vài lần liên tiếp mới chào, tránh trường hợp lóe lên một khung nhận nhầm rồi chào sai.
+• Kiểm tra ảnh khi đăng ký: từ chối ảnh mờ, mặt quá nhỏ hoặc quá tối. Đây là bài học từ lỗi ArcFace trong thí nghiệm: một ảnh đăng ký xấu làm 6 người lạ bị chào nhầm.
+2. Chào thông minh hơn
+• Chào theo buổi: "Chào buổi sáng Minh" / "Chào buổi tối Minh".
+• Danh xưng: thêm ô danh xưng khi đăng ký, để máy chào "Em chào cô Lan ạ" thay vì "Xin chào Lan".
+• Nhớ lần gặp trước: "Chào mừng Minh quay lại, lâu rồi không gặp!" nếu đã lâu chưa thấy, và không chào lặp lại khi người đó vẫn đứng trước camera.
+3. Ứng dụng thực tế: điểm danh / chấm công
+Hợp với tên môn "Thực tập doanh nghiệp" nhất:
+• Nhật ký ra vào: ghi ai đến lúc mấy giờ.
+• Trang lịch sử: xem theo ngày, xuất file Excel để chấm công hoặc điểm danh.
+• Người lạ: lưu lại ảnh người lạ để quản lý xem, và đăng ký nhanh từ chính ảnh đó.
+4. Bảo mật
+• Đăng nhập trang quản lý: dự án cũ đã có sẵn (mã ADMIN/NHANVIEN), lấy lại dùng.
+• Quyền riêng tư: hệ thống chỉ lưu vector, không lưu ảnh khuôn mặt. Nên nhấn mạnh điểm này trong báo cáo.
+Đề xuất thứ tự làm
+Cải tiến
+Công sức
+Giá trị
+Chống ảnh giả
+1 buổi
+Demo ấn tượng nhất
+Chỉ chào khi chắc chắn + kiểm tra ảnh đăng ký
+Nửa buổi
+Hệ thống đáng tin hơn
+Chào theo buổi + danh xưng + nhớ lần gặp
+Nửa buổi
+Lời chào tự nhiên hơn
+Nhật ký + xuất Excel
+1 buổi
+Có ứng dụng thực tế
+Cần quyết định
+• Chọn những cải tiến nào trong danh sách trên.
+• Hạn nộp bài, để sắp thứ tự công việc cho vừa thời gian.

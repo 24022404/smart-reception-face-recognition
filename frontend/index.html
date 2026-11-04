@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in · FaceGreet</title>
+<!-- Dùng giao diện sáng/tối đã chọn trong Settings -->
+<script>
+  try {
+    var g = localStorage.getItem('giao_dien') || 'toi';
+    if (g === 'he_thong') g = matchMedia('(prefers-color-scheme: dark)').matches ? 'toi' : 'sang';
+    document.documentElement.dataset.theme = g;
+  } catch (e) { document.documentElement.dataset.theme = 'toi'; }
+</script>
+<link rel="stylesheet" href="thu_vien/fonts/inter.css">   <!-- phông Inter có sẵn trong máy, không cần mạng -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="trang-dang-nhap">
+  <!-- Nửa trái: giới thiệu -->
+  <section class="dn-trai">
+    <div class="logo">
+      <span class="logo-o"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 21V10a7 7 0 0 1 14 0v11"/><path d="M3 21h18"/></svg></span>
+      FaceGreet
+    </div>
+    <div>
+      <div class="khung-mat" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <h1><span data-i18n="dn_hero_1">Greet everyone</span><br><span data-i18n="dn_hero_2">by name.</span></h1>
+      <p data-i18n="dn_hero_p">Face recognition that welcomes registered people the moment they walk in.</p>
+    </div>
+    <p class="dn-chan">ArcFace · RetinaFace · MediaPipe</p>
+  </section>
+
+  <!-- Nửa phải: ô đăng nhập. script.js đổi chữ thành "Set a password" nếu chưa có mật khẩu (lần đầu chạy) -->
+  <main class="dn-phai">
+    <form class="o-dang-nhap" id="form-dang-nhap" autocomplete="off">
+      <h2 id="tieu-de" data-i18n="dn_chao">Welcome back</h2>
+      <p class="mo-ta" id="mo-ta" data-i18n="dn_mo">Sign in to manage registered people.</p>
+
+      <label class="nhan-o" for="mat-khau" data-i18n="dn_mk">Password</label>
+      <input class="o-chu" id="mat-khau" type="password" autocomplete="current-password" required>
+
+      <div id="khoi-nhap-lai" hidden>
+        <label class="nhan-o" for="mat-khau-2" data-i18n="dn_mk2">Confirm password</label>
+        <input class="o-chu" id="mat-khau-2" type="password" autocomplete="new-password">
+      </div>
+
+      <p class="loi-dang-nhap" id="loi" role="alert"></p>
+      <button class="nut nut-chinh nut-rong" id="nut-gui" type="submit" data-i18n="dn_nut">Sign in</button>
+      <a class="lien-ket ve-man-chao" href="index.html" data-i18n="dn_ve">← Back to greeting screen</a>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
