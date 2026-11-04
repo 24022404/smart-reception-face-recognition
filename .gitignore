@@ -1,0 +1,26 @@
+# Môi trường Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# DỮ LIỆU CÁ NHÂN — không đưa lên GitHub
+du_lieu.db
+du_lieu.db-*
+danh_ba.npz
+danh_ba.npz.cu
+cai_dat.json
+anh_dang_ky/
+anh_nguoi_la/
+*.jpg
+*.jpeg
+*.png
+!thu_vien/**
+
+# Model tự tải khi chạy
+face_detection_yunet_2023mar.onnx
+
+# Linh tinh
+*.log
+.vscode/
+Thumbs.db
